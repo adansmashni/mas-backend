@@ -1,29 +1,17 @@
-import { Router } from "express";
+import { Router, Request, Response, response } from "express";
+
+interface UserRequest {
+  name: string;
+  email: string;
+  password: string;
+}
+
 
 const routes = Router();
-//routes.get('/user', (request, response) => response.json({
-//    message: 'Hello World'
-//}))
 
-routes.get("/user", (request, response) => {
-  response.json({
-    message: "Hello World",
-  });
-});
 
-routes.get("/user/:id/", (request, response) => {
-  const { id } = request.params;
-  response.json({
-    userId: id,
-  });
-});
-
-routes.get("/user/", (request, response) => {
-  const { nome, idade } = request.query;
-  response.json({
-    idade,
-    nome,
-  });
-});
+routes.post('/user', () => console.log("User route"));
+routes.post('/activy', () => console.log("Activy route"));
+routes.post('/courseunit', () => console.log("Course Unit route"));
 
 export default routes;
