@@ -1,6 +1,5 @@
 import { Column, CreateDateColumn, Entity, JoinTable, ManyToOne, PrimaryColumn } from "typeorm";
 import { v4 as uuid } from 'uuid';
-
 import { CourseUnit } from './CourseUnit';
 
 @Entity('activies')
@@ -20,7 +19,10 @@ class Activy {
     activy_date: Date;
 
     @Column()
-    course_unit_id: string;
+    courseUnitId: string;
+
+    @Column()
+    grade: number;
 
     @CreateDateColumn()
     created_at: Date;
