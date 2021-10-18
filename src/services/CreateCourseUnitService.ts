@@ -1,24 +1,23 @@
 import { getRepository } from "typeorm";
 import { CourseUnit } from "../models/CourseUnit";
 
-
 interface CourseUnitData {
     name: string;
     description: string;
 }
 
 class CreateCourseUnitService {
-    public async execute({ name, description }: CourseUnitData) {
 
-        const courseunitRepository = getRepository(CourseUnit);
+    public async execute(data: CourseUnitData) {
+        const { name, description } = data;
 
-        const courseunit = {
+        const courseUnit = {
             name,
             description
-        }
+        };
 
-        return courseunit;
+        return courseUnit;
     }
 }
 
-export { CreateCourseUnitService }
+export { CreateCourseUnitService };

@@ -1,7 +1,6 @@
 import { getRepository } from "typeorm";
 import { User } from "../models/User";
 
-
 interface UserData {
     name: string;
     email: string;
@@ -9,15 +8,16 @@ interface UserData {
 }
 
 class CreateUserService {
-    public async execute({ name, email, password }: UserData) {
+    public async execute(data: UserData) {
+        const { name, email, password } = data;
         const user = {
             name,
             email,
             password
-        }
-
+        };
         return user;
     }
 }
 
-export { CreateUserService }
+
+export { CreateUserService };
