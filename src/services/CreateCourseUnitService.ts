@@ -7,6 +7,7 @@ interface CourseUnitData {
 }
 
 class CreateCourseUnitService {
+
     public async execute(data: CourseUnitData) {
         const { name, description } = data;
 

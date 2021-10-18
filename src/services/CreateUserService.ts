@@ -15,9 +15,9 @@ class CreateUserService {
             email,
             password
         };
-
         return user;
     }
 }
+
 
 export { CreateUserService };
