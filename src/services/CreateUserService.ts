@@ -17,7 +17,7 @@ class CreateUserService {
         if (checkUserExists) {
             return {
                 error: "Email address already exists!"
-            }
+            };
 
         }
 
