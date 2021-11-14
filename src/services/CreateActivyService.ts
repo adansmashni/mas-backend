@@ -9,16 +9,19 @@ interface ActivyData {
 }
 
 class CreateActivyService {
-    public async execute(data: ActivyData) {
-        const { name, activy_date, grade, courseUnitId } = data;
-        const activyRepository = getRepository(Activy);
-        const checkActivyToCourseUnitExists = await activyRepository.findOne({ name, courseUnitId });
+//    public async execute(data: ActivyData) {
+//        const { name, activy_date, grade, courseUnitId } = data;
+//        const activyRepository = getRepository(Activy);
+//        const checkActivyToCourseUnitExists = await activyRepository.findOne({ name, courseUnitId });
+//        if (checkActivyToCourseUnitExists) {
+//            return {
+//                error: "Activy to Course already exists!"
+//            }
+//        }
+    async execute({name,activy_date,grade, courseUnitId}:ActivyData) {
 
-        if (checkActivyToCourseUnitExists) {
-            return {
-                error: "Activy to Course already exists!"
-            }
-        }
+        const activyRepository = getRepository(Activy);
+
         const activy = activyRepository.create({
                 name,
                 activy_date,
