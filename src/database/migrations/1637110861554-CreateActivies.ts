@@ -33,15 +33,15 @@ export class CreateActivies1637110850954 implements MigrationInterface {
                         type: "timestamp",
                         default: "now()",
                     }
-                ],
-                foreignKeys: [
-                    {
-                        name: 'ActivyCourseUnit',
-                        referencedTableName: 'course_units',
-                        referencedColumnNames: ['id'],
-                        columnNames: ['courseUnitId']
-                    }
                 ]
+//                foreignKeys: [
+//                    {
+//                        name: "ActivyCourseUnit",
+//                        referencedTableName: "course_units",
+//                        referencedColumnNames: ["id"],
+//                        columnNames: ["courseUnitId"]
+//                    }
+//                ]
             })
         )        
     }

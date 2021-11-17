@@ -1,23 +1,19 @@
 module.exports = 
 {
     "type": "postgres" ,
-    "host": process.env.DB_HOST,
-    "port": process.env.DB_PORT,
-    "username": process.env.DB_USER,
-    "password": process.env.DB_PASS,
-    "database": process.env.DB_NAME,
+    "url": process.env.DATABASE_URL,
     
     "entities": process.env.NODE_ENV == "production" 
         ? ["dist/models/*.js"] 
         : ["src/models/*.ts"],
 
     "migrations": process.env.NODE_ENV == "production"
-        ? ["dist/databases/migrations/*.js" ]
-        : ["src/databases/migrations/*.ts" ],
+        ? ["dist/database/migrations/*.js" ]
+        : ["src/database/migrations/*.ts" ],
         
     "cli": {
         "migrationsDir": [
-            "src/databases/migrations"
+            "src/database/migrations"
         ],
         "entitiesDir": "src/models"
     }
