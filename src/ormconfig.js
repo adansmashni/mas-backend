@@ -1,14 +1,19 @@
 module.exports = {
     "type": "postgres" ,
     "url": process.env.DATABASE_URL,
-    
-    "entities": process.env.NODE_ENV == "production" 
-        ? ["dist/models/*.js"] 
-        : ["src/models/*.ts"],
 
-    "migrations": process.env.NODE_ENV == "production"
-        ? ["dist/databases/migrations/*.js" ]
-        : ["src/databases/migrations/*.ts" ],
+    "entities": ["dist/models/*.js"],
+
+    "migrations": ["dist/databases/migrations/*.js" ],
+
+    
+//    "entities": process.env.NODE_ENV == "production" 
+//        ? ["dist/models/*.js"] 
+//        : ["src/models/*.ts"],
+//
+//    "migrations": process.env.NODE_ENV == "production"
+//        ? ["dist/databases/migrations/*.js" ]
+//        : ["src/databases/migrations/*.ts" ],
         
     "cli": {
         "migrationsDir": [
