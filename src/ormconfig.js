@@ -1,28 +1,20 @@
-module.exports = {
-    type: "postgres" ,
-    url: process.env.DATABASE_URL,
-
-    entities: process.env.NODE_ENV == "production" 
+module.exports = 
+{
+    "type": "postgres" ,
+    "url": process.env.DATABASE_URL,
+    
+    "entities": process.env.NODE_ENV == "production" 
         ? ["dist/models/*.js"] 
         : ["src/models/*.ts"],
 
-    migrations: process.env.NODE_ENV == "production"
-        ? ["dist/databases/migrations/*.js" ]
-        : ["src/databases/migrations/*.ts" ],
-
-    
-//    "entities": process.env.NODE_ENV == "production" 
-//        ? ["dist/models/*.js"] 
-//        : ["src/models/*.ts"],
-//
-//    "migrations": process.env.NODE_ENV == "production"
-//        ? ["dist/databases/migrations/*.js" ]
-//        : ["src/databases/migrations/*.ts" ],
+    "migrations": process.env.NODE_ENV == "production"
+        ? ["dist/database/migrations/*.js" ]
+        : ["src/database/migrations/*.ts" ],
         
-    cli: {
-        migrationsDir: [
-            "src/databases/migrations"
+    "cli": {
+        "migrationsDir": [
+            "src/database/migrations"
         ],
-        entitiesDir: "src/models"
+        "entitiesDir": "src/models"
     }
 }
