@@ -24,7 +24,7 @@ class CourseUnit {
     @UpdateDateColumn()
     updated_at: Date;
 
-    @OneToMany(() => Activy, activy => activy.course_unit)
+    @OneToMany(() => Activy, (activy: Activy) => activy.course_unit)
     activies: Activy[];
 }
 
