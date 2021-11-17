@@ -7,7 +7,7 @@
   "author": "Adans Mashni",
   "license": "MIT",
   "engines": {
-    "node": "14"
+    "node": "12"
   },
   "scripts": {
     "dev": "ts-node-dev --transpile-only --ignore-watch node_modules src/server.ts",
