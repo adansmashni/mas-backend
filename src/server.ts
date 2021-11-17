@@ -3,8 +3,10 @@ import express from 'express';
 import cors from 'cors';
 import './databases'
 import routes from './routes';
+import config from './config/server';
 
 const app = express();
+const port = config.server.port;
 
 app.use(cors());
 app.use(express.json());
