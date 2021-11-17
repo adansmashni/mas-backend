@@ -4,6 +4,7 @@ import cors from 'cors';
 import './databases'
 import routes from './routes';
 import config from './config/server';
+require('dotenv').config();
 
 const app = express();
 const port = config.server.port;
