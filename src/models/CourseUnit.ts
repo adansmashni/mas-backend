@@ -1,4 +1,4 @@
-import { Column, CreateDateColumn, Entity, OneToMany, PrimaryColumn } from "typeorm";
+import { Column, CreateDateColumn, Entity, OneToMany, PrimaryColumn, UpdateDateColumn  } from "typeorm";
 import { v4 as uuid } from 'uuid';
 import { Activy } from './Activy';
 
@@ -20,6 +20,9 @@ class CourseUnit {
 
     @CreateDateColumn()
     created_at: Date;
+
+    @UpdateDateColumn()
+    updated_at: Date;
 
     @OneToMany(() => Activy, activy => activy.course_unit)
     activies: Activy[];
